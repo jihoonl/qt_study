@@ -1,0 +1,3 @@
+
+add_subdirectory(${PROJECT_NAME})
+
