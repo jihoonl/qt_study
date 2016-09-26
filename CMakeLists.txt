@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(rgbd_viewer)
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED ecto ecto_pcl)
+find_package(ecto REQUIRED)
 
 find_package(Qt5Widgets)
 find_package(Qt5OpenGL)
@@ -18,8 +19,11 @@ endif(NOT OPENGL_FOUND)
 
 include_directories(
   include
+  ${catkin_INCLUDE_DIRS}
 )
 
+add_definitions(-std=c++11)
+#catkin_python_setup()
 
 catkin_package(
   DEPENDS GLUT OpenGL QT

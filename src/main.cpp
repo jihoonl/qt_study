@@ -56,8 +56,15 @@
 
 #include "rgbd_viewer/mainwindow.h"
 
-int main(int argc, char *argv[])
+int main()
 {
+
+    char  arg0[] = "programName";
+    char  arg1[] = "arg";
+    char  arg2[] = "another arg";
+    char* argv[] = { &arg0[0], &arg1[0], &arg2[0], NULL };
+    int   argc   = (int)(sizeof(argv) / sizeof(argv[0])) - 1;
+
     QApplication app(argc, argv);
 
     QSurfaceFormat fmt;
